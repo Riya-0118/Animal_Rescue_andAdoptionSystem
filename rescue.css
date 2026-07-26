@@ -1,0 +1,78 @@
+#main{
+    background-image: url(rescue.jpeg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    width:95vw;
+    height:25vh;
+    margin-top: 0px;
+    padding: 30px;
+}
+
+#request{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+#form{
+    border: 1px solid whitesmoke;
+    border-radius:10px;
+    box-shadow: #2E7D32;
+    padding:20px;
+    width: 50%;
+    margin:10px;
+    height:100%;
+}
+input{
+    padding:10px;
+    margin:10px;
+    width:80%;
+    height: 20px;
+}
+textarea{
+    padding:10px;
+    margin:10px;
+    width:80%;
+    height: 70px;
+}
+input[type="file"] {
+    width: 77%;
+    height:20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: transparent;
+    align-items: center;
+    padding-top: 5px;
+}
+
+#file::file-selector-button {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit{
+    background-color: #2E7D32;
+    color: white;
+    padding:10px;
+    margin:10px;
+    width:30%;
+    height:50px;
+}
+i{
+    color:#2E7D32;
+    margin:10px;
+}
+#note,#next{
+    border: 1px solid whitesmoke;
+    border-radius:10px;
+    box-shadow: #2E7D32;
+    padding:20px;
+    width: 90%;
+    margin:10px;text-align: justify;
+}
+h2{
+    color: #2E7D32;
+}
