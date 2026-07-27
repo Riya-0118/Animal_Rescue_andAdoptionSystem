@@ -21,17 +21,19 @@
             <form method="post" enctype="multipart/form-data">
             <h2>Send a Rescue Request</h2>
             <label for="Name">Full Name</label><br>
-            <input type="text" name="name" id="" placeholder="Enter your full name"><br>
+            <input type="text" name="name" id="" placeholder="Enter your full name" required><br>
             <label for="Phone">Phone Number</label><br>
-            <input type="text" name="phone" id="" placeholder="Enter your phone number"><br>
+            <input type="text" name="phone" id="" placeholder="Enter your phone number" required><br>
             <label for="Email">Email Address</label><br>
-            <input type="email" name="email" placeholder="Enter your email address"><br>
+            <input type="email" name="email" placeholder="Enter your email address" required><br>
             <label for="Location">Location</label><br>
-            <input type="text" name="location" id=""><br>
+            <input type="text" name="location" id="" required><br>
             <label for="Description">Description</label><br>
             <textarea name="description" id=""></textarea><br>
             <label for="photo">Upload Photo/ Video</label><br>
-            <input type="file" name="photo" id="file" accept="image/png, image/jpeg, image/jpg, video/mp4"><br>
+            <input type="file" name="photo[]" id="file"
+            accept="image/png, image/jpeg, image/jpg, video/mp4"
+            multiple><br>
             <button name="submit" id="submit">Submit Rescue Request</button><br>
             </form>
         </div>
@@ -60,25 +62,51 @@
 
     <?php
         include 'conn.php';
-         if(isset($_POST['submit'])){
-            $Name=$_POST['name'];
-            $Phone=$_POST['phone'];
-            $Email=$_POST['email'];
-            $Location=$_POST['location'];
-            $Description=$_POST['description'];
-            $Photo=$_FILES['photo']['name'];
-            $temp=$_FILES['photo']['tmp_name'];
-            $folder="photo/".$Photo;
-            move_uploaded_file($temp,$folder);
 
-            $sql="insert into Rescue(Name, Phone, Email, Location, Description, Image)
-            VALUES ('$Name', '$Phone', '$Email', '$Location', '$Description', '$Photo')";
-            $result= mysqli_query($conn,$sql);
-            
-            if($result){
-                header("Location:http://localhost/project/");
-            }else {
+        if (isset($_POST['submit'])) {
+
+            $Name = $_POST['name'];
+            $Phone = $_POST['phone'];
+            $Email = $_POST['email'];
+            $Location = $_POST['location'];
+            $Description = $_POST['description'];
+
+            $photos = [];
+
+            if (isset($_FILES['photo']) && !empty($_FILES['photo']['name'][0])) {
+
+                $count = count($_FILES['photo']['name']);
+
+                for ($i = 0; $i < $count; $i++) {
+
+                    $photoName = $_FILES['photo']['name'][$i];
+                    $tempName = $_FILES['photo']['tmp_name'][$i];
+
+                    $folder = __DIR__ . "/photo/" . $photoName;
+
+                    if (move_uploaded_file($tempName, $folder)) {
+                        $photos[] = $photoName;
+                    }
+                }
+            }
+
+            $Photo = json_encode($photos);
+
+            $sql = "INSERT INTO Rescue
+                    (Name, Phone, Email, Location, Description, Image)
+                    VALUES
+                    ('$Name', '$Phone', '$Email', '$Location', '$Description', '$Photo')";
+
+            $result = mysqli_query($conn, $sql);
+
+            if ($result) {
+
+                echo "Request submitted successfully!";
+
+            } else {
+
                 echo "Error: " . mysqli_error($conn);
+
             }
         }
     ?>
