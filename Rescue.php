@@ -35,6 +35,13 @@
             accept="image/png, image/jpeg, image/jpg, video/mp4"
             multiple><br>
             <button name="submit" id="submit">Submit Rescue Request</button><br>
+            <span class="message">
+                <?php
+                    if (isset($message)) {
+                        echo $message;
+                    }
+                ?>
+            </span>
             </form>
         </div>
         <div>
@@ -100,13 +107,9 @@
             $result = mysqli_query($conn, $sql);
 
             if ($result) {
-
-                echo "Request submitted successfully!";
-
+                $message = "Request submitted successfully!";
             } else {
-
-                echo "Error: " . mysqli_error($conn);
-
+                $message = "Error: " . mysqli_error($conn);
             }
         }
     ?>
