@@ -1,0 +1,124 @@
+body{
+    margin:0;
+    background:#f8faf8;
+    font-family:Poppins,sans-serif;
+}
+
+#main{
+    width:90%;
+    margin:60px auto;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+#main h1{
+    font-size:58px;
+    line-height:70px;
+    color:#222;
+}
+
+#main h1 span{
+    color:#2E7D32;
+}
+#main p{
+    font-size:18px;
+    color:#666;
+    line-height:32px;
+    margin:25px 0;
+}
+.buttons{
+    display:flex;
+    gap:18px;
+}
+.primary{
+    background:#2E7D32;
+    color:white;
+    width:fit-content;
+    height: auto;
+    padding: 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+.primary:hover{
+    background:#256428;
+    transform:translateY(-3px);
+}
+.secondary{
+    background:white;
+    color:#2E7D32;
+    border:2px solid #2E7D32;
+    width: fit-content;
+    height: auto;
+    padding:20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+.secondary:hover{
+    background:#2E7D32;
+    color:white;
+}
+#image img{
+    width:100%;
+    height: auto;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+#donate{
+    width:90%;
+    margin:60px auto;
+    background:#2E7D32;
+    color:white;
+    border-radius:25px;
+    padding:45px;
+    text-align:center;
+}
+#donate i{
+    font-size:45px;
+    color:#ffd64f;
+    margin-bottom:15px;
+}
+#donate h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+#donate p{
+    color:white;
+    font-size:18px;
+    margin-bottom:30px;
+}
+#donate button{
+    background:white;
+    color:#2E7D32;
+    font-weight:bold;
+    border-radius:10px;
+    width: fit-content;
+    height: auto;
+    padding:20px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+#donate button:hover{
+    background:#fff1eb;
+    transform:scale(1.05);
+}
+#donate button i{
+    color:#2E7D32;
+    margin-right:8px;
+}
+@media(max-width:900px){
+    #main{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+    .buttons{
+        justify-content:center;
+    }
+    #image img{
+        width:100%;
+    }
+    }
