@@ -1,0 +1,352 @@
+/* =========================
+   ABOUT PAGE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: #333;
+    background: #fff;
+}
+
+#main {
+    min-height: 430px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background: #fff7f5;
+}
+
+/* LEFT SIDE */
+#main #left {
+    width: 48%;
+}
+
+#main #left h4,
+#who #left h4,
+#mission > h4,
+#status > h4 {
+    color: #16803c;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+#main #left pre {
+    font-family: "Poppins", Arial, sans-serif;
+    white-space: pre-line;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #173b2a;
+    margin-bottom: 25px;
+}
+
+#main #left p {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#main #left a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 24px;
+    background: #16803c;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#main #left a:hover {
+    background: #0f6530;
+    transform: translateY(-2px);
+}
+
+#main #right {
+    width: 48%;
+    display: flex;
+    justify-content: center;
+}
+
+#main #right img {
+    width: 100%;
+    max-width: 560px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+
+/* =========================
+   WHO WE ARE
+========================= */
+
+#who {
+    min-height: 420px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    background: #fff;
+}
+
+#who #right {
+    width: 48%;
+}
+
+#who #right img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+#who #left {
+    width: 48%;
+}
+
+#who #left h4 {
+    margin-bottom: 15px;
+}
+
+#who #left p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #666;
+    max-width: 580px;
+}
+
+
+/* =========================
+   OUR MISSION
+========================= */
+
+#mission {
+    padding: 70px 8%;
+    text-align: center;
+    background: #fff7f5;
+}
+
+#mission > h4 {
+    margin-bottom: 8px;
+}
+
+#mission > h3 {
+    font-size: 34px;
+    color: #176b36;
+    margin-bottom: 45px;
+}
+
+#rescue,
+#home,
+#shelter {
+    width: 30%;
+    min-height: 230px;
+    display: inline-flex;
+    vertical-align: top;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 25px;
+    margin: 0 1%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+#rescue:hover,
+#home:hover,
+#shelter:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+#rescue i,
+#home i,
+#shelter i {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 28px;
+    color: #16803c;
+    background: #e6f4e9;
+    margin-bottom: 18px;
+}
+
+#home i {
+    color: #eb5a36;
+    background: #fff0eb;
+}
+
+#shelter i {
+    color: #5c9d29;
+    background: #edf7dc;
+}
+
+#rescue h5,
+#home h5,
+#shelter h5 {
+    font-size: 20px;
+    color: #176b36;
+    margin-bottom: 12px;
+}
+
+#rescue p,
+#home p,
+#shelter p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777;
+}
+
+
+/* =========================
+   OUR STATUS
+========================= */
+
+#status {
+    padding: 70px 8%;
+    text-align: center;
+    background: #fff;
+}
+
+#status > h4 {
+    margin-bottom: 40px;
+}
+
+#rescued,
+#adopted,
+#user {
+    width: 30%;
+    min-height: 190px;
+    display: inline-flex;
+    vertical-align: top;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1%;
+    padding: 25px;
+    border-radius: 20px;
+    background: #f8faf8;
+    border: 1px solid #e5eee7;
+}
+
+#rescued i,
+#adopted i,
+#user i {
+    font-size: 30px;
+    color: #16803c;
+    margin-bottom: 15px;
+}
+
+#adopted i {
+    color: #eb5a36;
+}
+
+#user i {
+    color: #5c9d29;
+}
+
+#rescued h5,
+#adopted h5,
+#user h5 {
+    font-size: 19px;
+    color: #176b36;
+    margin-bottom: 8px;
+}
+
+#rescued p,
+#adopted p,
+#user p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    #main,
+    #who {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+    }
+
+    #main #left,
+    #main #right,
+    #who #left,
+    #who #right {
+        width: 100%;
+    }
+
+    #main #left p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #main #left pre {
+        font-size: 34px;
+    }
+
+    #rescue,
+    #home,
+    #shelter,
+    #rescued,
+    #adopted,
+    #user {
+        width: 90%;
+        margin: 10px auto;
+        display: flex;
+    }
+
+    #mission,
+    #status {
+        padding: 55px 6%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    #main #left pre {
+        font-size: 28px;
+    }
+
+    #main #right img,
+    #who #right img {
+        height: 250px;
+    }
+
+    #mission > h3 {
+        font-size: 28px;
+    }
+
+    #main #left p,
+    #who #left p {
+        font-size: 14px;
+    }
+}
