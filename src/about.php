@@ -75,5 +75,6 @@ include "header.php";
             <p>Over 300 active users on our platform.</p>
         </div>
     </div>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
